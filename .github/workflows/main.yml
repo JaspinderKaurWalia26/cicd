@@ -16,15 +16,17 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16' # or '20' depending on your requirements
+        node-version: '20' # Using the latest version
 
     - name: Install and build
       run: |
         echo "Building project..."
-        # Here, you could add build steps if necessary
+        # Add build steps if necessary
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
         publish_dir: ./ # The directory containing your HTML and CSS files
+
